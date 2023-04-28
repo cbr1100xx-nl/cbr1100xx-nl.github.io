@@ -37,14 +37,11 @@
 
         .main-image img {
             max-width: 100%;
+            max-height: 60vh;
+            width: auto;
+            height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .main-image:after {
-            content: "";
-            display: block;
-            padding-bottom: 75%;
         }
 
         .price-sticker {
@@ -130,15 +127,23 @@
             emailLink.href = "mailto:" + email;
             emailLink.innerText = email;
         }
+        function showPhone() {
+            const num1 = "+3163";
+            const num2 = "0003453";
+            const email = num1 + num2;
+            const phoneLink = document.getElementById("phone-link");
+            phoneLink.href = "tel:" + email;
+            phoneLink.innerText = email;
+        }
     </script>
 </head>
 
-<body onload="showEmail()">
+<body onload="(() => {showEmail(); showPhone()})()">
     <div class="container">
         <h1>Koop mijn Honda CBR 1100 XX Super Blackbird</h1>
 
         <div class="main-image">
-            <img src="main-photo.jpg" alt="Hond CBR 1100 XX Super Blackbird">
+            <img src="img/rechts1.jpg" alt="Hond CBR 1100 XX Super Blackbird">
             <div class="price-sticker">€1300</div>
         </div>
 
@@ -157,19 +162,27 @@
             </ul>
 
             <ul>
+                <li>Naked & met Superbike-stuur</li>
                 <li>Nieuw Delkevic uitlaatsysteem - geen origineel met roestgaten!</li>
                 <li>Handvatverwarming!</li>
                 <li>Digitaal Koso dashboard met versnellingsindicator</li>
+                <li>Motorisch in zeer goede staat!</li>
+                <li>Cosmetisch in minder goede staat.</li>
             </ul>
 
             <p>Klaar voor zowel het circuit als de openbare weg!</p>
         </div>
 
         <div class="secondary-images">
-            <img src="image1.jpg" alt="Hond CBR 1100 XX Super Blackbird zijaanzicht">
-            <img src="image2.jpg" alt="Hond CBR 1100 XX Super Blackbird achterkant">
-            <img src="image3.jpg" alt="Hond CBR 1100 XX Super Blackbird dashboard">
-            <!-- Voeg hier meer afbeeldingen toe indien nodig -->
+            <img src="img\achter.jpg" alt="Hond CBR 1100 XX Super Blackbird">
+            <img src="img\band.jpg" alt="Hond CBR 1100 XX Super Blackbird">
+            <img src="img\dash.jpg" alt="Hond CBR 1100 XX Super Blackbird">
+            <img src="img\links.jpg" alt="Hond CBR 1100 XX Super Blackbird">
+            <img src="img\rechts1.jpg" alt="Hond CBR 1100 XX Super Blackbird">
+            <img src="img\rechts2.jpg" alt="Hond CBR 1100 XX Super Blackbird">
+            <img src="img\uitlaat.jpg" alt="Hond CBR 1100 XX Super Blackbird">
+            <img src="img\voor.jpg" alt="Hond CBR 1100 XX Super Blackbird">
+            <img src="img\zadel.jpg" alt="Hond CBR 1100 XX Super Blackbird">
         </div>
 
         <div class="text-section">
@@ -185,7 +198,8 @@
         </div>
 
         <div class="contact-info">
-            Geïnteresseerd? Neem contact op via: <a href="#" id="email-link" class="contact-link"
+            Geïnteresseerd? Neem contact op via: <a href="#" id="phone-link" class="contact-link"
+            onclick="showPhone()">Klik hier om e-mail te tonen</a> of <a href="#" id="email-link" class="contact-link"
                 onclick="showEmail()">Klik hier om e-mail te tonen</a>
         </div>
 
